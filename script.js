@@ -25,6 +25,7 @@ const dateIdeaEl = document.getElementById('dateIdea');
 
 let complimentIndex = 0;
 let loveScore = 0;
+let kissInterval = null;
 
 nextBtn.addEventListener('click', () => {
   complimentEl.textContent = compliments[complimentIndex];
@@ -96,14 +97,22 @@ function spawnKiss({ x, y, duration, size }) {
 
   setTimeout(() => {
     kiss.remove();
-  }, 7000);
+  }, (duration + 0.5) * 1000);
 }
 
-setInterval(() => {
-  spawnKiss({
-    x: Math.random() * window.innerWidth,
-    y: window.innerHeight + 24,
-    duration: 6 + Math.random() * 3,
-    size: 0.75 + Math.random() * 1
-  });
-}, 950);
+// Initialize continuous kiss animation after a short delay
+window.addEventListener('load', () => {
+  kissInterval = setInterval(() => {
+    spawnKiss({
+      x: Math.random() * window.innerWidth,
+      y: window.innerHeight + 24,
+      duration: 6 + Math.random() * 3,
+      size: 0.75 + Math.random() * 1
+    });
+  }, 950);
+});
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+  if (kissInterval) clearInterval(kissInterval);
+});
