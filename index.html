@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="kicker">A surprise for my favorite person ✨</p>
+      <h1>To the girl who makes my life beautiful</h1>
+      <p class="message">
+        You are my peace, my laughter, and my favorite part of every day.
+        I made this little page just to remind you how deeply I love you.
+      </p>
+
+      <div class="button-row">
+        <button id="nextCompliment" type="button">Tap for a reason I adore you 💞</button>
+      </div>
+
+      <p class="compliment" id="compliment"></p>
+
+      <section class="interactive-box">
+        <h2>Our Love Challenge 💘</h2>
+        <p class="small">Choose what we are together:</p>
+        <div class="quiz-buttons">
+          <button class="quiz-btn" data-points="25" type="button">Best friends</button>
+          <button class="quiz-btn" data-points="35" type="button">Adventure partners</button>
+          <button class="quiz-btn" data-points="50" type="button">Soulmates forever</button>
+        </div>
+
+        <div class="meter-wrap" aria-label="Love meter">
+          <div class="meter" id="loveMeter"></div>
+        </div>
+        <p class="meter-text" id="meterText">Love Meter: 0%</p>
+      </section>
+
+      <section class="interactive-box center">
+        <h2>Spin our next date idea 🎡</h2>
+        <button id="dateIdeaBtn" type="button">Pick our next cute date</button>
+        <p class="date-idea" id="dateIdea">Maybe a sunset walk with ice cream? 🍦</p>
+      </section>
+
+      <p class="small tip">Tip: tap anywhere to send kisses across the screen 💋</p>
+
+      <footer>
+        <p>Forever yours, with all my love. 💌</p>
+      </footer>
+    </main>
+
+    <div class="kisses" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

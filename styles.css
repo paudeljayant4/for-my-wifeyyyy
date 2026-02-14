@@ -1,0 +1,226 @@
+:root {
+  --bg-1: #fff0f6;
+  --bg-2: #fde2ff;
+  --card: rgba(255, 255, 255, 0.86);
+  --text: #5d1049;
+  --shadow: rgba(214, 51, 132, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, var(--bg-2), var(--bg-1));
+  overflow-x: hidden;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: min(94vw, 760px);
+  padding: 1.8rem;
+  border-radius: 24px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px var(--shadow);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: floatIn 900ms ease;
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  opacity: 0.78;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  margin: 0.7rem 0 1rem;
+  font-size: clamp(1.8rem, 6vw, 2.7rem);
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.15rem, 4.6vw, 1.35rem);
+}
+
+.message {
+  margin: 0 auto 1.25rem;
+  max-width: 55ch;
+  line-height: 1.75;
+}
+
+.button-row {
+  margin: 1rem 0;
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, #ff4da6, #d63384);
+  color: #fff;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(214, 51, 132, 0.35);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  min-height: 44px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+
+.compliment {
+  min-height: 2.5rem;
+  margin: 0.45rem 0 1rem;
+  font-weight: 600;
+}
+
+.interactive-box {
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.74);
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.quiz-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.quiz-btn {
+  padding: 0.68rem 0.9rem;
+  font-size: 0.88rem;
+}
+
+.meter-wrap {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #ffd4ea;
+  overflow: hidden;
+}
+
+.meter {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff4da6, #9c36ff);
+  transition: width 400ms ease;
+}
+
+.meter-text,
+.date-idea {
+  margin: 0.7rem 0 0;
+  font-weight: 600;
+}
+
+.small {
+  margin: 0.1rem 0 0.6rem;
+  font-size: 0.88rem;
+  opacity: 0.86;
+}
+
+.tip {
+  margin-top: 1rem;
+}
+
+footer {
+  margin-top: 1.3rem;
+  opacity: 0.88;
+  font-size: 0.95rem;
+}
+
+.kisses {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kiss {
+  position: absolute;
+  font-size: 1.25rem;
+  animation: drift linear forwards;
+  opacity: 0.7;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(110vh) scale(0.65);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.76;
+  }
+
+  to {
+    transform: translateY(-15vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0.65rem;
+    align-items: start;
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 18px;
+    padding: 1.2rem 1rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .quiz-buttons {
+    flex-direction: column;
+  }
+
+  .quiz-btn,
+  #dateIdeaBtn,
+  #nextCompliment {
+    width: 100%;
+  }
+
+  .small {
+    font-size: 0.83rem;
+  }
+}
